@@ -7,7 +7,7 @@ php:
 
 before_script:
     - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-    - composer install -n
+    - composer install -n --prefer-source
 
 services: mongodb
 
