@@ -1,3 +1,8 @@
+geek_hub_user:
+    resource: "@GeekHubUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 dream:
     resource: "@DreamBundle/Controller/"
     type:     annotation
