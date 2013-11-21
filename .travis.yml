@@ -9,4 +9,7 @@ before_script: composer install -n
 
 services: mongodb
 
-script: phpunit -c app
+script:
+    - sudo pecl install mongo
+    - echo "extension=mongo.so" >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
+    - phpunit -c app
