@@ -1,0 +1,5 @@
+dream:
+    resource: "@DreamBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
