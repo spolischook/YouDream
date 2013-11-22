@@ -6,6 +6,19 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.10.2",
+                "dist": {
+                    "url": "http://code.jquery.com/jquery-1.10.2.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
@@ -23,7 +36,11 @@
         "doctrine/mongodb-odm-bundle": "3.0.*@dev",
         "sonata-project/admin-bundle": "2.2.*@dev",
         "friendsofsymfony/user-bundle": "2.0.*@dev",
-        "hautelook/alice-bundle": "dev-master"
+        "hautelook/alice-bundle": "dev-master",
+        "braincrafted/bootstrap-bundle": "2.0.*@dev",
+        "twbs/bootstrap": "3.0.*",
+        "leafo/lessphp": "dev-master",
+        "jquery/jquery":  "1.10.*"
     },
     "scripts": {
         "post-install-cmd": [

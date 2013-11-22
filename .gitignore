@@ -10,3 +10,5 @@
 /bin/
 /composer.phar
 /composer.lock
+/web/css/*
+/web/js/*

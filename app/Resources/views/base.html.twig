@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block document_head %}
+            {% include '::head.html.twig' %}
+
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% endblock document_head %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            {% block navbar %}
+                {% include "::navbar.html.twig" %}
+            {% endblock navbar %}
+            <div class="container">
+                {% block container %}
+
+                {% endblock container %}
+            </div><!-- /.container -->
+        {% endblock %}
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery.js"></script>
+            <script src="{{ asset('/js/bootstrap.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
