@@ -3,6 +3,7 @@
 namespace GeekHub\UserBundle\Document;
 
 use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /** @MongoDB\Document(collection="users") */
@@ -35,8 +36,12 @@ class User extends BaseUser
     /** @MongoDB\Date */
     protected $birthday;
 
+    /** @MongoDB\ReferenceMany(targetDocument="GeekHub\DreamBundle\Document\Dream") */
+    protected $dreams;
+
     public function __construct()
     {
+        $this->dreams = new ArrayCollection();
         parent::__construct();
     }
 
@@ -224,5 +229,35 @@ class User extends BaseUser
     public function getBirthday()
     {
         return $this->birthday;
+    }
+
+    /**
+     * Add dream
+     *
+     * @param \GeekHub\DreamBundle\Document\Dream $dream
+     */
+    public function addDream(\GeekHub\DreamBundle\Document\Dream $dream)
+    {
+        $this->dreams[] = $dream;
+    }
+
+    /**
+     * Remove dream
+     *
+     * @param \GeekHub\DreamBundle\Document\Dream $dream
+     */
+    public function removeDream(\GeekHub\DreamBundle\Document\Dream $dream)
+    {
+        $this->dreams->removeElement($dream);
+    }
+
+    /**
+     * Get dreams
+     *
+     * @return \Doctrine\Common\Collections\Collection $dreams
+     */
+    public function getDreams()
+    {
+        return $this->dreams;
     }
 }
