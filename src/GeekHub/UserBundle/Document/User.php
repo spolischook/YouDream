@@ -238,7 +238,7 @@ class User extends BaseUser
      */
     public function addDream(\GeekHub\DreamBundle\Document\Dream $dream)
     {
-        $this->dreams[] = $dream;
+        $this->dreams->add($dream);
     }
 
     /**
