@@ -1,0 +1,26 @@
+GeekHub\UserBundle\Document\User:
+    user-{alena,alex,anton,drozd,eduard,filatova,kotyahov,lina,petrov,pisarenko,prudnikova,sasha,suhodolskaya,tarkovskaya,vasilenko,vasilyeva,viktor}:
+        username: <current()>
+        plainPassword: <current()>
+        email: <current()>@example.org
+        roles: ['ROLE_USER']
+        name: <firstName()> <lastName()>
+        aboutMe: <text($maxNbChars = 500)>
+        firstName: <firstName()>
+        lastName: <lastName()>
+        gender: <randomElement(['male', 'female'])>
+        profilePicture: <getImagesDir()><current()>.jpg
+        birthday: <dateTimeBetween('-100 years', '-18 years')>
+    user-admin:
+        username: admin
+        plainPassword: admin
+        email: admin@example.org
+        roles: ['ROLE_USER', 'ROLE_ADMIN']
+        name: <firstName()> <lastName()>
+        aboutMe: <text($maxNbChars = 500)>
+        firstName: <firstName()>
+        lastName: <lastName()>
+        gender: <randomElement(['male', 'female'])>
+        profilePicture: <getImagesDir()>admin.jpg
+        birthday: <dateTimeBetween('-100 years', '-18 years')>
+

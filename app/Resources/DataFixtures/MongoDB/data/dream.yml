@@ -1,0 +1,9 @@
+GeekHub\DreamBundle\Document\Dream:
+    dream-{1..100}:
+        title: <sentence($maxNbWords = 8)>
+        description: <text($maxNbChars = 500)>
+        owner: @user-<randomElement(['alena','alex','anton','drozd','eduard','filatova','kotyahov','lina','petrov','pisarenko','prudnikova','sasha','suhodolskaya','tarkovskaya','vasilenko','vasilyeva','viktor'])>
+        mainImage: <getImagesDir()><numberBetween(1, 10)>.jpg
+        phone: <phoneNumber()>
+        phoneAvailable: <randomElement([true, false])>
+        state: <randomElement(['open', 'close', 'complete', 'success'])>
