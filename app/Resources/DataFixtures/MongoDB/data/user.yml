@@ -1,26 +1,134 @@
 GeekHub\UserBundle\Document\User:
-    user-{alena,alex,anton,drozd,eduard,filatova,kotyahov,lina,petrov,pisarenko,prudnikova,sasha,suhodolskaya,tarkovskaya,vasilenko,vasilyeva,viktor}:
-        username: <current()>
-        plainPassword: <current()>
-        email: <current()>@example.org
-        roles: ['ROLE_USER']
-        name: <firstName()> <lastName()>
-        aboutMe: <text($maxNbChars = 500)>
-        firstName: <firstName()>
-        lastName: <lastName()>
-        gender: <randomElement(['male', 'female'])>
-        profilePicture: <getImagesDir()><current()>.jpg
-        birthday: <dateTimeBetween('-100 years', '-18 years')>
+    user-1:
+         username: joseph
+         plainPassword: viktor
+         email: viktor@example.org
+         roles: ['ROLE_USER']
+         name: Joseph Smith
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Joseph
+         lastName: Smith
+         gender: male
+         profilePicture: <setImage('user-1.jpg')>
+         birthday: <dateTime('-22 years')>
+    user-2:
+         username: henry
+         plainPassword: henry
+         email: henry@example.org
+         roles: ['ROLE_USER']
+         name: Henry Johnson
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Henry
+         lastName: Johnson
+         gender: male
+         profilePicture: <setImage('user-2.jpg')>
+         birthday: <dateTime('-28 years')>
+    user-3:
+         username: herbert
+         plainPassword: herbert
+         email: herbert@example.org
+         roles: ['ROLE_USER']
+         name: Herbert Sae
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Herbert
+         lastName: Sae
+         gender: male
+         profilePicture: <setImage('user-3.jpg')>
+         birthday: <dateTime('-18 years')>
+    user-4:
+         username: jimmy
+         plainPassword: jimmy
+         email: jimmy@example.org
+         roles: ['ROLE_USER']
+         name: Jimmy Kong
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Jimmy
+         lastName: Kong
+         gender: male
+         profilePicture: <setImage('user-4.jpg')>
+         birthday: <dateTime('-28 years')>
+    user-5:
+         username: raymond
+         plainPassword: raymond
+         email: raymond@example.org
+         roles: ['ROLE_USER']
+         name: Raymond Adams
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Raymond
+         lastName: Adams
+         gender: male
+         profilePicture: <setImage('user-5.jpg')>
+         birthday: <dateTime('-32 years')>
+    user-6:
+         username: june
+         plainPassword: june
+         email: june@example.org
+         roles: ['ROLE_USER']
+         name: June Ferrell
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: June
+         lastName: Ferrell
+         gender: female
+         profilePicture: <setImage('user-6.jpg')>
+         birthday: <dateTime('-18 years')>
+    user-7:
+         username: jennifer
+         plainPassword: jennifer
+         email: jennifer@example.org
+         roles: ['ROLE_USER']
+         name: Jennifer Chandler
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Jennifer
+         lastName: Chandler
+         gender: female
+         profilePicture: <setImage('user-7.jpg')>
+         birthday: <dateTime('-16 years')>
+    user-8:
+         username: monica
+         plainPassword: monica
+         email: monica@example.org
+         roles: ['ROLE_USER']
+         name: Monica Elliott
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Monica
+         lastName: Elliott
+         gender: female
+         profilePicture: <setImage('user-8.jpg')>
+         birthday: <dateTime('-22 years')>
+    user-9:
+         username: rebecca
+         plainPassword: rebecca
+         email: rebecca@example.org
+         roles: ['ROLE_USER']
+         name: Rebecca Martin
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Rebecca
+         lastName: Martin
+         gender: female
+         profilePicture: <setImage('user-9.jpg')>
+         birthday: <dateTime('-21 years')>
+    user-10:
+         username: amanda
+         plainPassword: amanda
+         email: amanda@example.org
+         roles: ['ROLE_USER']
+         name: Amanda Lang
+         aboutMe: <text($maxNbChars = 500)>
+         firstName: Amanda
+         lastName: Lang
+         gender: female
+         profilePicture: <setImage('user-10.jpg')>
+         birthday: <dateTime('-20 years')>
     user-admin:
         username: admin
         plainPassword: admin
         email: admin@example.org
         roles: ['ROLE_USER', 'ROLE_ADMIN']
-        name: <firstName()> <lastName()>
-        aboutMe: <text($maxNbChars = 500)>
-        firstName: <firstName()>
-        lastName: <lastName()>
-        gender: <randomElement(['male', 'female'])>
-        profilePicture: <getImagesDir()>admin.jpg
-        birthday: <dateTimeBetween('-100 years', '-18 years')>
+        name: Darth Vader
+        aboutMe: Who's your daddy
+        firstName: Darth
+        lastName: Vader
+        gender: 'male'
+        profilePicture: <setImage('dart.jpg')>
+        birthday: <dateTime('-1024 years')>
 
