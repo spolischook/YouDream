@@ -1,4 +1,7 @@
 {% extends "::base.html.twig" %}
 {% block container %}
-
+    <h1>List of dreams</h1>
+    {{ render(controller('DreamBundle:Api/Dream:getDreams', {}, {
+        'count': 9
+    })) }}
 {% endblock container %}

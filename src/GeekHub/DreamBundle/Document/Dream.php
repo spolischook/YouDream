@@ -3,6 +3,7 @@
 namespace GeekHub\DreamBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use JMS\Serializer\Annotation\ExclusionPolicy;
 
 /** @MongoDB\Document(collection="dream") */
 class Dream
@@ -22,7 +23,7 @@ class Dream
     /** @MongoDB\ReferenceOne(targetDocument="GeekHub\UserBundle\Document\User") */
     protected $owner;
 
-    /** @MongoDB\File */
+    /** @MongoDB\EmbedOne(targetDocument="GeekHub\MediaBundle\Document\EmbeddedImage") */
     protected $mainImage;
 
     protected $images;

@@ -27,7 +27,7 @@ class User extends BaseUser
     /** @MongoDB\String */
     protected $gender;
 
-    /** @MongoDB\File */
+    /** @MongoDB\EmbedOne(targetDocument="GeekHub\MediaBundle\Document\EmbeddedImage") */
     protected $profilePicture;
 
     /** @MongoDB\String */

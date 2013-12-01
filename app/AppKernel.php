@@ -20,10 +20,15 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Hautelook\AliceBundle\HautelookAliceBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
             new GeekHub\DreamBundle\DreamBundle(),
-            new GeekHub\UserBundle\GeekHubUserBundle()
+            new GeekHub\UserBundle\GeekHubUserBundle(),
+            new GeekHub\MediaBundle\MediaBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

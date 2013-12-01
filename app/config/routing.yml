@@ -8,6 +8,18 @@ dream:
     type:     annotation
     prefix:   /
 
+api_dream:
+    type:     rest
+    resource: GeekHub\DreamBundle\Controller\Api\DreamController
+
+_imagine:
+    resource: .
+    type:     imagine
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

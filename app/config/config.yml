@@ -5,6 +5,7 @@ imports:
 framework:
     #esi:             ~
     translator:      { fallback: %locale% }
+    fragments: { path: /_fragment }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -14,6 +15,7 @@ framework:
     validation:      { enable_annotations: true }
     templating:
         engines: ['twig']
+        hinclude_default_template: ::hinclude.html.twig
         #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_proxies: ~
@@ -37,6 +39,9 @@ assetic:
             filters:
                 - cssrewrite
             output: css/style.css
+        holder_js:
+            inputs: [%kernel.root_dir%/../vendor/twbs/bootstrap/docs-assets/js/holder.js]
+            output: js/holder.js
     filters:
         less:
             node: /home/spolischook/local/bin/node
@@ -82,3 +87,33 @@ fos_user:
 
 braincrafted_bootstrap:
     less_filter: less
+
+sensio_framework_extra:
+    request: { converters: true }
+    view:    { annotations: false }
+    router:  { annotations: true }
+
+fos_rest:
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener: true
+    body_converter:
+        enabled: true
+        validate: true
+    routing_loader:
+        default_format: json
+    view:
+        view_response_listener: force
+
+nelmio_api_doc: ~
+
+liip_imagine:
+    filter_sets:
+        dream_list:
+            quality: 75
+            filters:
+                thumbnail: { size: [340, 190], mode: outbound }
+        user_avatar_small:
+            quality: 75
+            filters:
+                thumbnail: { size: [50, 50], mode: outbound }
