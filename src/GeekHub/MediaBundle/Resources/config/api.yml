@@ -1,0 +1,4 @@
+users:
+    resource: GeekHub\MediaBundle\Controller\Api\MediaController
+    type:     rest
+    name_prefix: api_media_

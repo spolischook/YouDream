@@ -12,6 +12,11 @@ api_dream:
     type:     rest
     resource: GeekHub\DreamBundle\Controller\Api\DreamController
 
+_api_user:
+    resource: "@GeekHubUserBundle/Resources/config/api.yml"
+    type:     rest
+    prefix: /api
+
 _imagine:
     resource: .
     type:     imagine
